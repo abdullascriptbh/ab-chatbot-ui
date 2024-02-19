@@ -305,22 +305,25 @@ User: ${el.msg.props.children}`;
 	}, [ChatlistInput]);
 
 	return (
-		<div className="flex h-screen flex-col dark:bg-header-color">
+		<div className="flex h-screen flex-col dark:bg-red">
 			<Header />
 
 			<div
-				className="mb-[7rem] mt-[5.1rem] flex-1 overflow-y-auto bg-custom-white px-3 py-2 dark:bg-header-color xs:mb-[5rem] xs:mt-[5.5rem]"
+				className="mb-[7rem] mt-[5.1rem] flex-1 overflow-y-auto bg-custom-white px-3 py-2 dark:bg-header-color xs:mb-[5rem] xs:mt-[5rem]"
 				ref={messagesEndRef}
 				style={{ scrollBehavior: "smooth" }}
 			>
 				{chatList.map((el, index) => {
 					if (el.from == "system") {
 						return (
-							<div className={`${index === lastElementIndex ? "mb-2 flex flex-col items-start" : "mb-8 flex flex-col items-start"}`} dir="ltr">
+							<div
+								className={`${index === 0 ? "mb-5 mt-4 flex flex-col items-start" : index === lastElementIndex ? "mb-3 flex flex-col items-start" : "mb-5 flex flex-col items-start"}`}
+								dir="ltr"
+							>
 								<div className="flex items-start">
 									<img src={process.env.PUBLIC_URL + "/ai.png"} alt="Avatar" className="mr-1 size-10 rounded-full bg-transparent p-1" />
 
-									<div className="min-w-[25rem] max-w-[25rem] overflow-hidden whitespace-normal rounded-[8px]  bg-chat-bubble-100 p-3 text-right dark:bg-chat-bubble-400 xs:min-w-[16rem] xs:max-w-[16rem]">
+									<div className="min-w-[25rem] max-w-[25rem] overflow-hidden whitespace-normal rounded-[8px]  bg-chat-bubble-100 p-3 text-right   dark:bg-chat-bubble-400 xs:min-w-[16rem] xs:max-w-[16rem]">
 										<p className="mb-1 whitespace-pre-line text-sm/[13px] font-normal leading-24 text-chat-bubble-300 dark:text-slate-50">{el.msg}</p>
 										<p className="mt-1 py-1 text-sm/[8px] font-normal text-date-color-200 dark:text-date-color-400">{el.date}</p>
 									</div>
@@ -329,9 +332,9 @@ User: ${el.msg.props.children}`;
 						);
 					} else {
 						return (
-							<div className="mb-8 flex flex-col items-end">
+							<div className="mb-5 flex flex-col items-end">
 								<div className="flex items-start">
-									<div className="min-w-[25rem] max-w-[25rem] overflow-hidden whitespace-normal rounded-[8px] bg-chat-bubble-300 p-3 text-slate-50 dark:bg-chat-bubble-400 xs:min-w-[16rem] xs:max-w-[16rem]">
+									<div className="min-w-[25rem] max-w-[25rem] overflow-hidden whitespace-normal rounded-[8px] bg-chat-bubble-300 p-3 text-slate-50  dark:bg-chat-bubble-400 xs:min-w-[16rem] xs:max-w-[16rem]">
 										<p className="mb-1 whitespace-pre-line  text-right text-sm/[13px] font-normal leading-24 dark:text-slate-50">{el.msg}</p>
 										<p className="mt-1 py-1 text-sm/[8px] font-normal text-date-color-200 dark:text-date-color-400">{el.date}</p>
 									</div>
@@ -345,7 +348,7 @@ User: ${el.msg.props.children}`;
 
 			<div className="fixed bottom-0 h-24 w-full bg-custom-white px-4 py-4 dark:bg-header-color xs:h-20 xs:border-t-[1px] xs:border-date-color-100 xs:px-4 xs:py-4 xs:dark:border-date-color-400">
 				<form onSubmit={(e, chatInput) => sendMsg(e, chatInput)} dir="rtl">
-					<div className="flex rounded-lg shadow-sm">
+					<div className="flex rounded-lg">
 						<button
 							className="inline-flex h-[54px] w-[2.875rem] flex-shrink-0 cursor-pointer items-center justify-center rounded-r-[10px] bg-chat-bubble-100 disabled:opacity-50 dark:bg-chat-bubble-400"
 							disabled={ChatlistInput}
