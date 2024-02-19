@@ -7,7 +7,6 @@ dayjs.extend(utc);
 dayjs.extend(timezone);
 dayjs.tz.setDefault("Asia/Bahrain");
 
-import * as Spinner from "react-loader-spinner";
 import { FaArrowUp, FaStop } from "react-icons/fa";
 import { initChatList } from "./conversation";
 import { Header } from "./Header";
@@ -151,16 +150,6 @@ function ChatBotUI() {
 					from: "system",
 					msg: (
 						<Fragment>
-							{/* <Spinner.Comment
-								visible={true}
-								height="60"
-								width="80"
-								ariaLabel="comment-loading"
-								wrapperStyle={{}}
-								wrapperClass="comment-wrapper"
-								color="text-gray-300"
-								backgroundColor="white"
-							/> */}
 							<div class="mx-auto w-full max-w-sm p-4">
 								<div class="flex animate-pulse space-x-4">
 									<div class="flex-1 space-y-6 py-1">
@@ -196,8 +185,6 @@ User: ${el.msg.props.children}`;
 				data: {
 					searchTerm: msg,
 					UserName: UserName,
-					systemId: 0,
-					ChapterId: 7,
 					chatHistory: chatHistory,
 				},
 			};
