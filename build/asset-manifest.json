@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/chatbot/static/css/main.5d27a04c.css",
-    "main.js": "/chatbot/static/js/main.8d7eb57f.js",
+    "main.css": "/chatbot/static/css/main.7df5ea06.css",
+    "main.js": "/chatbot/static/js/main.92565664.js",
     "static/media/Tajawal-Medium.ttf": "/chatbot/static/media/Tajawal-Medium.560d82ceeb79f4cf2103.ttf",
     "static/media/Tajawal-Regular.ttf": "/chatbot/static/media/Tajawal-Regular.2a157b78c1389289cebb.ttf",
     "index.html": "/chatbot/index.html"
   },
   "entrypoints": [
-    "static/css/main.5d27a04c.css",
-    "static/js/main.8d7eb57f.js"
+    "static/css/main.7df5ea06.css",
+    "static/js/main.92565664.js"
   ]
 }
