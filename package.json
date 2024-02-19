@@ -1,0 +1,62 @@
+{
+	"name": "chatbot-ui",
+	"homepage": "/chatbot",
+	"version": "1.0.0",
+	"private": true,
+	"dependencies": {
+		"@testing-library/jest-dom": "^5.14.1",
+		"@testing-library/react": "^11.2.7",
+		"@testing-library/user-event": "^12.8.3",
+		"autoprefixer": "^10.4.17",
+		"dayjs": "^1.11.10",
+		"express": "^4.18.2",
+		"path": "^0.12.7",
+		"postcss": "^8.4.35",
+		"react": "^18.2.0",
+		"react-dom": "^18.2.0",
+		"react-error-overlay": "^6.0.9",
+		"react-icons": "^4.2.0",
+		"react-loader-spinner": "^5.4.5",
+		"react-media-recorder": "^1.4.0",
+		"react-scripts": "^5.0.1",
+		"styled-component": "^2.8.0",
+		"tailgrids": "^2.1.0"
+	},
+	"scripts": {
+		"preinstall": "npx npm-force-resolutions",
+		"start": "react-scripts start",
+		"dev": "react-scripts start",
+		"build": "react-scripts build",
+		"test": "react-scripts test",
+		"eject": "react-scripts eject",
+		"serve": "serve -s build -p 4002",
+		"push": "git add . && git commit -m '.' && git push",
+		"pull": "git pull && npm run build && pm2 reload react-chatbot"
+	},
+	"resolutions": {
+		"react-error-overlay": "6.0.9"
+	},
+	"eslintConfig": {
+		"extends": [
+			"react-app",
+			"react-app/jest"
+		]
+	},
+	"browserslist": {
+		"production": [
+			">0.2%",
+			"not dead",
+			"not op_mini all"
+		],
+		"development": [
+			"last 1 chrome version",
+			"last 1 firefox version",
+			"last 1 safari version"
+		]
+	},
+	"devDependencies": {
+		"prettier": "^3.2.5",
+		"prettier-plugin-tailwindcss": "^0.5.11",
+		"tailwindcss": "^3.4.1"
+	}
+}
