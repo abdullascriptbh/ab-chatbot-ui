@@ -45,9 +45,7 @@ module.exports = {
 			},
 		},
 		animations: {
-			// custom animation classes
 			bounce: "bounce 1s",
-			slide: "slide-in 1s",
 		},
 	},
 	plugins: [
