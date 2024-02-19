@@ -4,7 +4,7 @@ import { MdOutlineWbSunny } from "react-icons/md";
 import { MdOutlineDarkMode } from "react-icons/md";
 
 const ThemeSwitcher = () => {
-	const [darkMode, setDarkMode] = useState(false);
+	const [darkMode, setDarkMode] = useState(true);
 
 	useEffect(() => {
 		const isDarkMode = localStorage.getItem("darkMode") === "true";

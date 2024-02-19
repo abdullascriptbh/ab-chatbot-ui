@@ -1,8 +1,8 @@
 import React, { Fragment } from "react";
-
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
+import { TypeAnimation } from "react-type-animation";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
@@ -35,24 +35,15 @@ export const initChatList = [
 	// 	from: "system",
 	// 	msg: (
 	// 		<Fragment>
-	// 			<div class="mx-auto w-full max-w-sm p-4">
-	// 				<div class="flex animate-pulse space-x-4">
-	// 					<div class="flex-1 space-y-6 py-1">
-	// 						<div class="grid grid-cols-3 gap-4">
-	// 							<div class="col-span-2 h-2 rounded bg-slate-700 dark:bg-slate-50"></div>
-	// 							<div class="col-span-1 h-2 rounded bg-slate-700 dark:bg-slate-50"></div>
-	// 						</div>
-	// 						{/* <div class="h-2 rounded bg-slate-700 dark:bg-slate-50"></div> */}
-	// 						{/* <div class="space-y-3">
-	// 							<div class="grid grid-cols-3 gap-4">
-	// 								<div class="col-span-2 h-2 rounded bg-slate-700 dark:bg-slate-50"></div>
-	// 								<div class="col-span-1 h-2 rounded bg-slate-700 dark:bg-slate-50"></div>
-	// 							</div>
-	// 							<div class="h-2 rounded bg-slate-700 dark:bg-slate-50"></div>
-	// 						</div> */}
-	// 					</div>
-	// 				</div>
-	// 			</div>
+	// 			<TypeAnimation
+	// 				sequence={[".", 200, "..", 200, "...", 200, "....", 1000]}
+	// 				wrapper="span"
+	// 				speed={10}
+	// 				deletionSpeed={5}
+	// 				style={{ fontSize: "1rem", display: "inline-block" }}
+	// 				repeat={Infinity}
+	// 				cursor={false}
+	// 			/>
 	// 		</Fragment>
 	// 	),
 	// 	date: "10:15 AM",

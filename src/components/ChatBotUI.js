@@ -10,6 +10,7 @@ dayjs.tz.setDefault("Asia/Bahrain");
 import { FaArrowUp, FaStop } from "react-icons/fa";
 import { initChatList } from "./conversation";
 import { Header } from "./Header";
+import { TypeAnimation } from "react-type-animation";
 
 function ChatBotUI() {
 	const messagesEndRef = useRef(null);
@@ -150,20 +151,15 @@ function ChatBotUI() {
 					from: "system",
 					msg: (
 						<Fragment>
-							<div class="mx-auto w-full max-w-sm p-4">
-								<div class="flex animate-pulse space-x-4">
-									<div class="flex-1 space-y-6 py-1">
-										{/* <div class="h-2 rounded bg-slate-700 dark:bg-slate-50"></div> */}
-										<div class="space-y-3">
-											<div class="grid grid-cols-3 gap-4">
-												<div class="col-span-2 h-2 rounded bg-slate-700 dark:bg-slate-50"></div>
-												<div class="col-span-1 h-2 rounded bg-slate-700 dark:bg-slate-50"></div>
-											</div>
-											{/* <div class="h-2 rounded bg-slate-700 dark:bg-slate-50"></div> */}
-										</div>
-									</div>
-								</div>
-							</div>
+							<TypeAnimation
+								sequence={[".", 200, "..", 200, "...", 200, "....", 1000]}
+								wrapper="span"
+								speed={10}
+								deletionSpeed={5}
+								style={{ fontSize: "1rem", display: "inline-block" }}
+								repeat={Infinity}
+								cursor={false}
+							/>
 						</Fragment>
 					),
 				},
@@ -317,23 +313,22 @@ User: ${el.msg.props.children}`;
 								<div className="flex items-start">
 									<img src={process.env.PUBLIC_URL + "/ai.png"} alt="Avatar" className="mr-1 size-10 rounded-full bg-transparent p-1" />
 
-									<div className="min-w-[17rem] max-w-[17rem] overflow-hidden rounded-[8px]  bg-chat-bubble-100 p-3 text-right dark:bg-chat-bubble-400 xs:min-w-[17rem] xs:max-w-[17rem]">
-										<p className="mb-1 whitespace-pre-line font-Tajawal text-sm/[13px] leading-24 text-chat-bubble-300 dark:text-slate-50">{el.msg}</p>
-										<p className="mt-1 py-1 font-Tajawal text-sm/[8px] text-date-color-200 dark:text-date-color-400">{el.date}</p>
+									<div className="min-w-[25rem] max-w-[25rem] overflow-hidden whitespace-normal rounded-[8px]  bg-chat-bubble-100 p-3 text-right dark:bg-chat-bubble-400 xs:min-w-[20rem] xs:max-w-[20rem]">
+										<p className="mb-1 whitespace-pre-line text-sm/[13px] font-normal leading-24 text-chat-bubble-300 dark:text-slate-50">{el.msg}</p>
+										<p className="mt-1 py-1 text-sm/[8px] font-normal text-date-color-200 dark:text-date-color-400">{el.date}</p>
 									</div>
 								</div>
 							</div>
 						);
 					} else {
 						return (
-							<div className="mb-8 flex flex-col items-start" dir="rtl">
+							<div className="mb-8 flex flex-col items-end">
 								<div className="flex items-start">
-									<img src={process.env.PUBLIC_URL + "/business-person.png"} alt="User" className="ml-1 size-10 rounded-full bg-transparent p-1" />
-
-									<div className="min-w-[17rem] max-w-[17rem] overflow-hidden rounded-[8px] bg-chat-bubble-300 p-3  text-slate-50 dark:bg-chat-bubble-400 xs:min-w-[17rem] xs:max-w-[17rem]">
-										<p className="font-Tajawa mb-1 whitespace-pre-line text-right text-sm/[13px]  leading-24 dark:text-slate-50">{el.msg}</p>
-										<p className="mt-1 py-1 font-Tajawal text-sm/[8px] text-date-color-200 dark:text-date-color-400">{el.date}</p>
+									<div className="min-w-[25rem] max-w-[25rem] overflow-hidden whitespace-normal rounded-[8px] bg-chat-bubble-300 p-3 text-slate-50 dark:bg-chat-bubble-400 xs:min-w-[20rem] xs:max-w-[20rem]">
+										<p className="mb-1 whitespace-pre-line  text-right text-sm/[13px] font-normal leading-24 dark:text-slate-50">{el.msg}</p>
+										<p className="mt-1 py-1 text-sm/[8px] font-normal text-date-color-200 dark:text-date-color-400">{el.date}</p>
 									</div>
+									<img src={process.env.PUBLIC_URL + "/business-person.png"} alt="User" className="ml-1 size-10 rounded-full bg-transparent p-1" />
 								</div>
 							</div>
 						);
@@ -366,7 +361,7 @@ User: ${el.msg.props.children}`;
 							type="text"
 							value={chatInput.UserMsg}
 							onChange={(e) => handleChatInput(e)}
-							className="block w-full rounded-none border-none bg-chat-bubble-100 py-3 text-sm text-chat-bubble-300 placeholder:pr-2 focus-visible:outline-none disabled:opacity-50 dark:bg-chat-bubble-400 dark:text-chat-bubble-100 xs:py-0"
+							className="block w-full rounded-none border-none bg-chat-bubble-100 py-3 text-sm text-chat-bubble-300 placeholder:pr-2 focus:ring-0 focus-visible:outline-none disabled:opacity-50 dark:bg-chat-bubble-400 dark:text-chat-bubble-100 xs:py-0"
 							placeholder="اكتب هنا ..."
 							ref={inputRef}
 						/>

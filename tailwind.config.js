@@ -3,7 +3,7 @@ import defaultTheme from "tailwindcss/defaultTheme";
 
 module.exports = {
 	darkMode: "class",
-	content: ["./src/**/*.{js,jsx,ts,tsx}"],
+	content: ["./src/**/*.{js,jsx,ts,tsx}", "node_modules/flowbite-react/lib/esm/**/*.js"],
 	theme: {
 		screens: {
 			xs: { min: "300px", max: "504px" },
@@ -50,6 +50,8 @@ module.exports = {
 	},
 	plugins: [
 		require("tailgrids/plugin"),
+		require("flowbite/plugin"),
+		require("flowbite-typography"),
 		({ addUtilities, theme, variants }) => {
 			const newUtilities = {
 				".dark-gradient-text": {
