@@ -305,7 +305,7 @@ User: ${el.msg.props.children}`;
 	}, [ChatlistInput]);
 
 	return (
-		<div className="flex h-screen flex-col dark:bg-red">
+		<div className="flex h-screen flex-col dark:bg-header-color">
 			<Header />
 
 			<div
