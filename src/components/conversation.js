@@ -2,7 +2,7 @@ import React, { Fragment } from "react";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
-import { TypeAnimation } from "react-type-animation";
+// import { TypeAnimation } from "react-type-animation";
 
 dayjs.extend(utc);
 dayjs.extend(timezone);
