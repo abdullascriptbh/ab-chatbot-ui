@@ -21,7 +21,7 @@ export const initChatList = [
 				<br />
 				<p>
 					Follow me on (X){" "}
-					<a href="https://twitter.com/abdullascript" target="_blank" rel="noreferrer">
+					<a href="https://x.com/abdullascript" target="_blank" rel="noreferrer">
 						@AbdullaScript
 					</a>
 				</p>
