@@ -321,9 +321,9 @@ User: ${el.msg.props.children}`;
 								dir="ltr"
 							>
 								<div className="flex items-start">
-									<img src={process.env.PUBLIC_URL + "/bot_2.jpg"} alt="Avatar" className="mr-1 size-10 rounded-full bg-transparent p-1" />
+									<img src={process.env.PUBLIC_URL + "/ai.png"} alt="Avatar" className="mr-1 size-10 rounded-full bg-chat-bubble-300 p-[1px] dark:bg-chat-bubble-300" />
 
-									<div className="min-w-[25rem] max-w-[25rem] overflow-hidden whitespace-normal rounded-[8px]  bg-chat-bubble-100 p-3 text-right   dark:bg-chat-bubble-400 xs:min-w-[16rem] xs:max-w-[16rem]">
+									<div className="min-w-[25rem] max-w-[25rem] overflow-hidden whitespace-normal rounded-[8px]  bg-chat-bubble-100 p-3 text-right dark:bg-chat-bubble-400 xs:min-w-[16rem] xs:max-w-[16rem]">
 										<p className="mb-1 whitespace-pre-line text-sm/[13px] font-normal leading-24 text-chat-bubble-300 dark:text-slate-50">{el.msg}</p>
 										<p className="mt-1 py-1 text-sm/[8px] font-normal text-date-color-200 dark:text-date-color-400">{el.date}</p>
 									</div>
@@ -338,7 +338,11 @@ User: ${el.msg.props.children}`;
 										<p className="mb-1 whitespace-pre-line  text-right text-sm/[13px] font-normal leading-24 dark:text-slate-50">{el.msg}</p>
 										<p className="mt-1 py-1 text-sm/[8px] font-normal text-date-color-200 dark:text-date-color-400">{el.date}</p>
 									</div>
-									<img src={process.env.PUBLIC_URL + "/person.jpg"} alt="User" className="ml-1 size-10 rounded-full bg-transparent p-1" />
+									<img
+										src={process.env.PUBLIC_URL + "/business-person.png"}
+										alt="User"
+										className="ml-1 size-10 rounded-full bg-chat-bubble-300 p-[1px] dark:bg-chat-bubble-300"
+									/>
 								</div>
 							</div>
 						);
